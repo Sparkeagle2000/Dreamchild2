@@ -28,7 +28,7 @@ public class PlayerController001 : MonoBehaviour
     public bool chasetrigger=false;
     public bool hub=false;
     public float count=5.0f;
-    public AudioClip footsteps;
+    //public AudioClip footsteps;
     bool music=false;
     public int win;
     //public AudioSource suzie;
@@ -44,7 +44,7 @@ public class PlayerController001 : MonoBehaviour
     void Start()
     {
         timemanager = GameObject.FindGameObjectWithTag("TimeManager").GetComponent<TimeManager>();
-        rb=GetComponent<Rigidbody>();
+        //rb=GetComponent<Rigidbody>();
         win=PlayerPrefs.GetInt("win");
         if(PlayerPrefs.GetInt("time")==1)
         {
@@ -63,6 +63,8 @@ public class PlayerController001 : MonoBehaviour
             //winscreen/scene
         //}
         dashTime=startDash;
+        current=this.transform;
+        last=this.transform;
         current.position=transform.position;
         last.position=transform.position;
     }
@@ -104,6 +106,7 @@ public class PlayerController001 : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.F)&&dojotrigger)
         {
+            Debug.Log("Dojo?");
             SceneManager.LoadScene("Dojo Stage");
         }
         if(Input.GetKeyDown(KeyCode.F)&&chasetrigger)
@@ -219,7 +222,7 @@ public class PlayerController001 : MonoBehaviour
             }
             if(time)
             {
-
+                Debug.Log("In Time");
                 if(Input.GetKeyDown(KeyCode.F)&& !timemanager.TimeIsStopped) 
                 {
                     timemanager.StopTime();
@@ -271,18 +274,27 @@ public class PlayerController001 : MonoBehaviour
         if(other.name=="TimeStop")
         {
             timeAcquired=true;
+            time=true;
+            speedy=false;
+            growth=false;
             PlayerPrefs.SetInt("time",1);
             Destroy(other.gameObject);
         }
         if(other.name=="Growth")
         {
             growthAcquired=true;
+            time=false;
+            speedy=false;
+            growth=true;
             PlayerPrefs.SetInt("growth",1);
             Destroy(other.gameObject);
         }
         if(other.name=="Speed")
         {
             speedAcquired=true;
+            time=false;
+            speedy=true;
+            growth=false;
             PlayerPrefs.SetInt("speed",1);
             Destroy(other.gameObject);
         }
