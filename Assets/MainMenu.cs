@@ -13,4 +13,14 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void HubLevel()
+    {
+        SceneManager.LoadScene("Hub");
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

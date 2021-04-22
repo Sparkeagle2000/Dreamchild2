@@ -34,7 +34,7 @@ public class PlayerController001 : MonoBehaviour
     //public AudioSource suzie;
 
     private float growthScale=1.0f;
-    private float growthcount=2;
+    private float growthcount=3;
     private float timer=0.0f;
     private Transform current,last,move;
 
@@ -86,7 +86,7 @@ public class PlayerController001 : MonoBehaviour
         {
             //Debug.Log("jumping");
             if(growthScale==3)
-            rb.AddForce(new Vector3(0,7*2,0), ForceMode.Impulse);
+            rb.AddForce(new Vector3(0,7,0), ForceMode.Impulse);
             if(growthScale==1)
             rb.AddForce(new Vector3(0,7,0), ForceMode.Impulse);
             if(growthScale==0.3)
@@ -318,6 +318,7 @@ public class PlayerController001 : MonoBehaviour
         {
             win++;
             PlayerPrefs.SetInt("win",win);
+            SceneManager.LoadScene("Hub");
         }
         if(other.name=="Big Doggo")
         {

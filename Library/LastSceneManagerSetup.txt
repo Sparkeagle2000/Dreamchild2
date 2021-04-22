@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Dojo Stage.unity
+- path: Assets/Scenes/DreamChild Menu.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
