@@ -31924,6 +31924,11 @@ PrefabInstance:
       propertyPath: stamina
       value: 
       objectReference: {fileID: 236117047}
+    - target: {fileID: 7421274735626166910, guid: 71cdf2e76c22b6b4dbf8b85173e2fb57,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7655208818440879687, guid: 71cdf2e76c22b6b4dbf8b85173e2fb57,
         type: 3}
       propertyPath: m_Name
