@@ -4210,6 +4210,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1002305519741747971, guid: 4ea974bd8c15ac34cbf96eb97b0d563b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526985876889782399, guid: 4ea974bd8c15ac34cbf96eb97b0d563b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.12971553
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526985876889782399, guid: 4ea974bd8c15ac34cbf96eb97b0d563b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526985876889782399, guid: 4ea974bd8c15ac34cbf96eb97b0d563b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.012548926
+      objectReference: {fileID: 0}
     - target: {fileID: 6571770099203748147, guid: 4ea974bd8c15ac34cbf96eb97b0d563b,
         type: 3}
       propertyPath: m_Name
@@ -4320,8 +4340,24 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9219672813583222474, guid: 4ea974bd8c15ac34cbf96eb97b0d563b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219672813583222474, guid: 4ea974bd8c15ac34cbf96eb97b0d563b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ea974bd8c15ac34cbf96eb97b0d563b, type: 3}
+--- !u!224 &460528638 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5885812043178672028, guid: 4ea974bd8c15ac34cbf96eb97b0d563b,
+    type: 3}
+  m_PrefabInstance: {fileID: 460528637}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &463581215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6257922293744160600, guid: 01f3a6be5aeed124491be81b500be942,
@@ -19649,6 +19685,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: cfc23b8e11766da46954fbd39613c5df, type: 3}
+    - target: {fileID: 7421274735626166910, guid: 71cdf2e76c22b6b4dbf8b85173e2fb57,
+        type: 3}
+      propertyPath: stamina
+      value: 
+      objectReference: {fileID: 460528638}
     - target: {fileID: 7655208818440879687, guid: 71cdf2e76c22b6b4dbf8b85173e2fb57,
         type: 3}
       propertyPath: m_Name

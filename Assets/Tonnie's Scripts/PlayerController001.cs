@@ -39,8 +39,8 @@ public class PlayerController001 : MonoBehaviour
     private float timer=0.0f;
     private Transform current,last,move;
 
-    public Slider stamina;
-    private int maxStam=5;
+    public Transform stamina;
+    Vector3 scale;
 
 
     private TimeManager timemanager;
@@ -71,8 +71,8 @@ public class PlayerController001 : MonoBehaviour
         last=this.transform;
         current.position=transform.position;
         last.position=transform.position;
-        stamina.maxValue=maxStam;
-        stamina.value=count;
+        scale=new Vector3(count,1f,1f);
+        stamina.localScale=scale;
     }
 
     // Update is called once per frame
@@ -246,13 +246,15 @@ public class PlayerController001 : MonoBehaviour
                 if(!timemanager.TimeIsStopped && count<5.0f) 
                 {
                     count+=Time.deltaTime;
-                    stamina.value=count;
+                    scale=new Vector3(count,1f,1f);
+                    stamina.localScale=scale;
 
                 }
                 if(timemanager.TimeIsStopped) 
                 {
                     count-=Time.deltaTime;
-                    stamina.value=count;
+                    scale=new Vector3(count,1f,1f);
+                    stamina.localScale=scale;
 
                 }   
             }
@@ -267,7 +269,6 @@ public class PlayerController001 : MonoBehaviour
             walk.Pause();
             music=false;
         }
-        stamina.value=count;
     }
 
     private void OnCollisionEnter(Collision other)
