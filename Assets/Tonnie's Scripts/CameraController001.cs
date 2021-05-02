@@ -7,6 +7,7 @@ public class CameraController001 : MonoBehaviour
     public float RotationSpeed=1;
     public Transform target, player;
     float x,y;
+    public Pause pause;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class CameraController001 : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if(!pause.paused)
         CamControl();
     }
 

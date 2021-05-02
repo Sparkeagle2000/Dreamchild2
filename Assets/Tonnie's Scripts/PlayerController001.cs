@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController001 : MonoBehaviour
 {
@@ -38,6 +39,9 @@ public class PlayerController001 : MonoBehaviour
     private float timer=0.0f;
     private Transform current,last,move;
 
+    public Slider stamina;
+    private int maxStam=5;
+
 
     private TimeManager timemanager;
     // Start is called before the first frame update
@@ -67,6 +71,8 @@ public class PlayerController001 : MonoBehaviour
         last=this.transform;
         current.position=transform.position;
         last.position=transform.position;
+        stamina.maxValue=maxStam;
+        stamina.value=count;
     }
 
     // Update is called once per frame
@@ -240,11 +246,13 @@ public class PlayerController001 : MonoBehaviour
                 if(!timemanager.TimeIsStopped && count<5.0f) 
                 {
                     count+=Time.deltaTime;
+                    stamina.value=count;
 
                 }
                 if(timemanager.TimeIsStopped) 
                 {
                     count-=Time.deltaTime;
+                    stamina.value=count;
 
                 }   
             }
@@ -259,6 +267,7 @@ public class PlayerController001 : MonoBehaviour
             walk.Pause();
             music=false;
         }
+        stamina.value=count;
     }
 
     private void OnCollisionEnter(Collision other)

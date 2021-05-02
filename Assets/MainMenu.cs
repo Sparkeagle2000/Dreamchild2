@@ -23,4 +23,19 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void Dojo()
+    {
+        SceneManager.LoadScene("Dojo Stage");
+    }
+
+    public void Chase()
+    {
+        SceneManager.LoadScene("Chase Stage");
+    }
+
+    public void Nightmare()
+    {
+        SceneManager.LoadScene("Nightmare Stage");
+    }
 }

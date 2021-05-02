@@ -654,6 +654,7 @@ MonoBehaviour:
   hub: 0
   count: 5
   win: 3
+  stamina: {fileID: 0}
 --- !u!1 &4918080353643717532
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +880,7 @@ MonoBehaviour:
   RotationSpeed: 1
   target: {fileID: 7421274734551276108}
   player: {fileID: 7023103516103894269}
+  pause: {fileID: 6571770099203748156, guid: 4ea974bd8c15ac34cbf96eb97b0d563b, type: 3}
 --- !u!82 &7421274734978293312
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1218,6 +1220,7 @@ MonoBehaviour:
   hub: 0
   count: 5
   win: 0
+  stamina: {fileID: 6707783156749200454, guid: ac50269c54f9af54ab3ea9ddc2004968, type: 3}
 --- !u!1 &7960373312335860016
 GameObject:
   m_ObjectHideFlags: 0
