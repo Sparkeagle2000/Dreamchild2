@@ -171,6 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2521738050771528240}
+  - component: {fileID: 1728644862243547213}
   m_Layer: 0
   m_Name: Nightstand
   m_TagString: Untagged
@@ -185,7 +186,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3005259715470094474}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -79.12546, y: 121.453476, z: -117.75143}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -199,6 +200,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &1728644862243547213
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3005259715470094474}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0956389, y: 2.6415393, z: 1.2061214}
+  m_Center: {x: -0.9913296, y: 0.82076967, z: -0.021615982}
 --- !u!1 &3098773009488042833
 GameObject:
   m_ObjectHideFlags: 0
