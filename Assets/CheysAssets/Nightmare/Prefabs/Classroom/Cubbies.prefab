@@ -738,6 +738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8855757071611806746}
+  - component: {fileID: 1064370303147148879}
   m_Layer: 0
   m_Name: Cubbies
   m_TagString: Untagged
@@ -752,7 +753,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8191529369498492576}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.26, y: -0.9, z: 6.14}
   m_LocalScale: {x: 0.009332059, y: 0.009332059, z: 0.009332059}
   m_Children:
@@ -770,6 +771,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1064370303147148879
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8191529369498492576}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 439.94968, y: 340.0709, z: 113.45545}
+  m_Center: {x: -3.0733626, y: 132.68874, z: -6.083289}
 --- !u!1 &8391039767683384913
 GameObject:
   m_ObjectHideFlags: 0

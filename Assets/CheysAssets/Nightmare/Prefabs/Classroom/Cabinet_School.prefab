@@ -495,6 +495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7036867066650726059}
+  - component: {fileID: 4936096235223115475}
   m_Layer: 0
   m_Name: Cabinet_School
   m_TagString: Untagged
@@ -509,7 +510,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7704579228958512145}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 4.1, y: -0.53235173, z: 5.6}
   m_LocalScale: {x: 0.016590033, y: 0.016590033, z: 0.016590033}
   m_Children:
@@ -525,6 +526,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &4936096235223115475
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7704579228958512145}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 110.89549, y: 193.54102, z: 70.00312}
+  m_Center: {x: -1.404928, y: 96.270485, z: 6.107413}
 --- !u!1 &8068055464924679187
 GameObject:
   m_ObjectHideFlags: 0

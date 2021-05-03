@@ -182,6 +182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1777683622817485605}
+  - component: {fileID: 7014730064305556845}
   m_Layer: 0
   m_Name: Bookcase_School
   m_TagString: Untagged
@@ -196,7 +197,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432225472114100639}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.86, y: -0.5323508, z: 7.21}
   m_LocalScale: {x: 0.011853738, y: 0.011853738, z: 0.011853738}
   m_Children:
@@ -208,6 +209,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7014730064305556845
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432225472114100639}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 175.06201, y: 261.11624, z: 87.61579}
+  m_Center: {x: -0.90772134, y: 130.05812, z: 1.554346}
 --- !u!1 &2175951488808588610
 GameObject:
   m_ObjectHideFlags: 0
