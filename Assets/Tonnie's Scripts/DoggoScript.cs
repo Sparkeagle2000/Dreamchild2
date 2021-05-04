@@ -16,7 +16,7 @@ public class DoggoScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.position.z>-30)
+        if(player.position.z>-32)
         {
             rb.velocity=transform.forward*-speed;
             if(transform.localPosition.z>1450)
@@ -26,9 +26,5 @@ public class DoggoScript : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag=="Player")
-        Destroy(other.gameObject);
-    }
+
 }

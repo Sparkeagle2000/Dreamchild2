@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 6562361959669404184}
   m_Layer: 0
   m_Name: Doodoo
-  m_TagString: Untagged
+  m_TagString: Doodoo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,7 +204,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4208024159891597222}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.8366741, y: 0.6039346, z: 0.78695273}

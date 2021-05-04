@@ -29,19 +29,17 @@ public class PlayerController001 : MonoBehaviour
     public bool chasetrigger=false;
     public bool hub=false;
     public float count=5.0f;
+
     public AudioSource michaelTime;
     public AudioSource michaelSpeed;
     public AudioSource michaelGrowth;
     public AudioSource michaelShrink;
     public AudioSource michaelJump;
     public AudioSource michaelSlide;
-
-
-
-
     //public AudioClip footsteps;
-    bool music =false;
+    bool music=false;
     public int win;
+    public bool slow=false;
     //public AudioSource suzie;
 
     private float growthScale=1.0f;
@@ -51,6 +49,7 @@ public class PlayerController001 : MonoBehaviour
 
     public Transform stamina;
     Vector3 scale;
+
 
 
     private TimeManager timemanager;
@@ -92,7 +91,12 @@ public class PlayerController001 : MonoBehaviour
         var vertical = Input.GetAxis("Vertical");
         if(speedy)
         {
-            transform.Translate(new Vector3(horizontal, 0, vertical) * (speed * Time.deltaTime*5));
+            if(!slow)
+            transform.Translate(new Vector3(horizontal, 0, vertical) * (speed * Time.deltaTime*4));
+            else
+            {
+                transform.Translate(new Vector3(horizontal, 0, vertical) * (speed/2 * Time.deltaTime*4));
+            }
         }
         else
         {
@@ -130,44 +134,62 @@ public class PlayerController001 : MonoBehaviour
         {
             SceneManager.LoadScene("Chase Stage");
         }
-
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(growth)
         {
-            if(growthcount==3)
+            if(Input.GetKeyDown(KeyCode.Q))
             {
-                growthcount=1;
+                if(growthcount==3)
+                {
+                    growthcount=1;
+                }
+                else
+                {
+                    growthcount++;
+                }
             }
-            else
-            {
-                growthcount++;
-            }
-        }
 
-        if(Input.GetKeyDown(KeyCode.E))
-        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                if(growthcount==1)
+                {
+                    growthcount=3;
+                }
+                else
+                {
+                    growthcount--;
+                }
+            }
+
             if(growthcount==1)
             {
-                growthcount=3;
+                growthScale=0.3f;
+                if(transform.localScale!=new Vector3(growthScale,growthScale,growthScale))
+                {
+                    transform.localScale=new Vector3(growthScale,growthScale,growthScale);
+                    michaelShrink.Play();
+                }
             }
-            else
+
+            if(growthcount==2)
             {
-                growthcount--;
+                growthScale=1.0f;
+                if(transform.localScale!=new Vector3(growthScale,growthScale,growthScale))
+                {
+                    transform.localScale=new Vector3(growthScale,growthScale,growthScale);
+                }
             }
-        }
 
-        if(growthcount==1)
-        {
-            growthScale=0.3f;
-        }
-
-        if(growthcount==2)
-        {
-            growthScale=1.0f;
-        }
-
-        if(growthcount==3)
-        {
-            growthScale=3.0f;
+            if(growthcount==3)
+            {
+                growthScale=3.0f;
+                if(transform.localScale!=new Vector3(growthScale,growthScale,growthScale))
+                {
+                    transform.localScale=new Vector3(growthScale,growthScale,growthScale);
+                    michaelGrowth.Play();
+                }
+                
+                
+            }
         }
 
             //Attack script for attack
@@ -186,31 +208,37 @@ public class PlayerController001 : MonoBehaviour
                 {
                     time=true;
                     growth=false;
+                    michaelTime.Play();
                 }
                 else if(growth&&speedAcquired)
                 {
                     speedy=true;
                     growth=false;
+                    michaelSpeed.Play();
                 }
                 else if(time&&speedAcquired)
                 {
                     speedy=true;
                     time=false;
+                    michaelSpeed.Play();
                 }
                 else if(time&&growthAcquired)
                 {
                     growth=true;
                     time=false;
+                    michaelGrowth.Play();
                 }
                 else if(speedy&&growthAcquired)
                 {
                     growth=true;
                     speedy=false;
+                    michaelGrowth.Play();
                 }
                 else if(speedy&&timeAcquired)
                 {
                     time=true;
                     speedy=false;
+                    michaelTime.Play();
                 }
             }
 
@@ -230,20 +258,22 @@ public class PlayerController001 : MonoBehaviour
                 }
             }
         
-            if(growth)
+            /*if(growth)
             {
                 if(Input.GetKeyDown(KeyCode.F))
                 {
-                    transform.localScale=new Vector3(growthScale,growthScale,growthScale);
+                    Vector3 bigboy=new Vector3(3f,3f,3f);
+                    
+                    
                 }
-            }
+            }*/
             if(time)
             {
                 Debug.Log("In Time");
                 if(Input.GetKeyDown(KeyCode.F)&& !timemanager.TimeIsStopped) 
                 {
                     timemanager.StopTime();
-
+                    michaelTime.Play();
                 }
                 else if(Input.GetKeyDown(KeyCode.F) && timemanager.TimeIsStopped) 
                 {
@@ -334,24 +364,36 @@ public class PlayerController001 : MonoBehaviour
         {
             chasetrigger=true;
         }
-        if(other.name=="Doodoo")
+        if(other.gameObject.tag=="Doodoo")
         {
             StartCoroutine(Slip());
+            Destroy(other.gameObject);
             michaelSlide.Play();
         }
         if(other.name=="Macguffin")
         {
             win++;
             PlayerPrefs.SetInt("win",win);
-            SceneManager.LoadScene("Hub");
+            if(other.gameObject.tag=="Chase")
+            SceneManager.LoadScene("Chase Win");
+            if(other.gameObject.tag=="Nightmare")
+            SceneManager.LoadScene("Nightmare Win");
+            if(other.gameObject.tag=="Dojo")
+            SceneManager.LoadScene("Dojo Win");
         }
         if(other.name=="Big Doggo")
         {
-            Destroy(this.gameObject);
+            Vector3 winner=new Vector3(3f,3f,3f);
+            if(transform.localScale!=winner)
+            SceneManager.LoadScene("Chase Loss");
+            else
+            {
+                SceneManager.LoadScene("Chase Win");
+            }
         }
-        if(other.name=="Lemur")
+        if(other.name=="lemur")
         {
-            Destroy(this.gameObject);
+            SceneManager.LoadScene("Nightmare Loss");
         }
     }
 
@@ -373,9 +415,9 @@ public class PlayerController001 : MonoBehaviour
 
     IEnumerator Slip()
     {
-        speed=speed/2;
+        slow=true;
         yield return new WaitForSeconds(2);
-        speed=speed*2;
+        slow=false;
     }
 
     void Dash()
