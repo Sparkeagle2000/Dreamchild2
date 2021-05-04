@@ -29,8 +29,18 @@ public class PlayerController001 : MonoBehaviour
     public bool chasetrigger=false;
     public bool hub=false;
     public float count=5.0f;
+    public AudioSource michaelTime;
+    public AudioSource michaelSpeed;
+    public AudioSource michaelGrowth;
+    public AudioSource michaelShrink;
+    public AudioSource michaelJump;
+    public AudioSource michaelSlide;
+
+
+
+
     //public AudioClip footsteps;
-    bool music=false;
+    bool music =false;
     public int win;
     //public AudioSource suzie;
 
@@ -98,6 +108,7 @@ public class PlayerController001 : MonoBehaviour
             if(growthScale==0.3)
             rb.AddForce(new Vector3(0,2,0), ForceMode.Impulse);
             onGround=false;
+            michaelJump.Play();
         }
 
         if(current.position!=transform.position)
@@ -289,6 +300,7 @@ public class PlayerController001 : MonoBehaviour
             growth=false;
             PlayerPrefs.SetInt("time",1);
             Destroy(other.gameObject);
+            michaelTime.Play();
         }
         if(other.name=="Growth")
         {
@@ -298,6 +310,7 @@ public class PlayerController001 : MonoBehaviour
             growth=true;
             PlayerPrefs.SetInt("growth",1);
             Destroy(other.gameObject);
+            michaelGrowth.Play();
         }
         if(other.name=="Speed")
         {
@@ -307,6 +320,7 @@ public class PlayerController001 : MonoBehaviour
             growth=false;
             PlayerPrefs.SetInt("speed",1);
             Destroy(other.gameObject);
+            michaelSpeed.Play();
         }
         if(other.name=="Nightmare")
         {
@@ -323,6 +337,7 @@ public class PlayerController001 : MonoBehaviour
         if(other.name=="Doodoo")
         {
             StartCoroutine(Slip());
+            michaelSlide.Play();
         }
         if(other.name=="Macguffin")
         {
