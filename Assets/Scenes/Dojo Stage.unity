@@ -568,6 +568,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arena
       objectReference: {fileID: 0}
+    - target: {fileID: 5797828810704831978, guid: 90c9286867e85394a8a6f482f5d188e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 6574646572676947792, guid: 90c9286867e85394a8a6f482f5d188e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21205,7 +21210,7 @@ GameObject:
   - component: {fileID: 2114518981}
   m_Layer: 0
   m_Name: Entrance
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8

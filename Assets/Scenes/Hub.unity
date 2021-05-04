@@ -3778,6 +3778,12 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 1146850437}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1071694831 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539759010521667704, guid: 2f5a641a64a098b428823a024d78ef3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4074297207517725629}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1115172480
 GameObject:
   m_ObjectHideFlags: 0
@@ -3972,12 +3978,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71cdf2e76c22b6b4dbf8b85173e2fb57, type: 3}
---- !u!4 &1146850438 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7023103516103894269, guid: 71cdf2e76c22b6b4dbf8b85173e2fb57,
-    type: 3}
-  m_PrefabInstance: {fileID: 1146850437}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1171823038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4180,10 +4180,15 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.037246335
       objectReference: {fileID: 0}
+    - target: {fileID: 2874687392239906641, guid: 4ea974bd8c15ac34cbf96eb97b0d563b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6236575817411654172, guid: 4ea974bd8c15ac34cbf96eb97b0d563b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6571770098675270019, guid: 4ea974bd8c15ac34cbf96eb97b0d563b,
         type: 3}
@@ -4194,6 +4199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571770098764987606, guid: 4ea974bd8c15ac34cbf96eb97b0d563b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6571770099203748147, guid: 4ea974bd8c15ac34cbf96eb97b0d563b,
         type: 3}
@@ -5939,7 +5949,7 @@ GameObject:
   - component: {fileID: 1590057743}
   m_Layer: 0
   m_Name: Cube (31)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8839,7 +8849,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1146850438}
+      objectReference: {fileID: 1071694831}
     - target: {fileID: 1736294364954928500, guid: 2f5a641a64a098b428823a024d78ef3c,
         type: 3}
       propertyPath: pause

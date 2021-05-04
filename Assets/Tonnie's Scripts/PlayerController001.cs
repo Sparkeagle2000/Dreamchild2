@@ -375,24 +375,44 @@ public class PlayerController001 : MonoBehaviour
             win++;
             PlayerPrefs.SetInt("win",win);
             if(other.gameObject.tag=="Chase")
-            SceneManager.LoadScene("Chase Win");
+            {
+                Cursor.visible=true;
+                Cursor.lockState=CursorLockMode.None;
+                SceneManager.LoadScene("Chase Win");
+            }
             if(other.gameObject.tag=="Nightmare")
-            SceneManager.LoadScene("Nightmare Win");
+            {
+                Cursor.visible=true;
+                Cursor.lockState=CursorLockMode.None;
+                SceneManager.LoadScene("Nightmare Win");
+            }
             if(other.gameObject.tag=="Dojo")
-            SceneManager.LoadScene("Dojo Win");
+            {
+                Cursor.visible=true;
+                Cursor.lockState=CursorLockMode.None;
+                SceneManager.LoadScene("Dojo Win");
+            }
         }
         if(other.name=="Big Doggo")
         {
             Vector3 winner=new Vector3(3f,3f,3f);
             if(transform.localScale!=winner)
-            SceneManager.LoadScene("Chase Loss");
+            {
+                Cursor.visible=true;
+                Cursor.lockState=CursorLockMode.None;
+                SceneManager.LoadScene("Chase Loss");
+            }
             else
             {
+                Cursor.visible=true;
+                Cursor.lockState=CursorLockMode.None;
                 SceneManager.LoadScene("Chase Win");
             }
         }
         if(other.name=="lemur")
         {
+            Cursor.visible=true;
+                Cursor.lockState=CursorLockMode.None;
             SceneManager.LoadScene("Nightmare Loss");
         }
     }

@@ -7,6 +7,7 @@ public class LossScreen : MonoBehaviour
 {
     public void HubLevel()
     {
+        Time.timeScale=1f;
         SceneManager.LoadScene("Hub");
     }
 
